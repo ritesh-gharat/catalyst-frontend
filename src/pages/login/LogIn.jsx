@@ -24,7 +24,7 @@ function LogIn() {
     }
   }
   return (
-    <div className="min-h-screen flex items-center justify-center flex-col bg-gray-100">
+    <div className="min-h-screen w-full flex items-center justify-center flex-col bg-gray-100">
       <h1 className="text-4xl font-bold m-5">CATALYST AI</h1>
       <div className="w-96 bg-white p-8 rounded-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">Log In</h2>
