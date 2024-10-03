@@ -25,7 +25,7 @@ function Home() {
           anywhere.
         </span>
         <Link
-          to="/app/user"
+          to="/app/learning"
           class="w-auto bg-blue-500 hover:bg-blue-400 text-white font-bold py-3 px-6 rounded-full transition duration-300"
         >
           Get Started

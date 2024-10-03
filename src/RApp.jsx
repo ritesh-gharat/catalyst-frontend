@@ -9,7 +9,9 @@ import LogIn from "./pages/login/LogIn";
 import App from "./pages/app/App";
 
 import LearningSession from "./components/LearningSession/LearningSession";
-//import ExpertSection from "./components/ExpertSection/ExpertSection"
+import ChatSession from "./components/ChatSession/ChatSession";
+import ExpertSection from "./components/ExpertSection/ExpertSection";
+import Expert from "./components/ExpertSection/Expert";
 
 import User from "./pages/user/User";
 
@@ -32,17 +34,14 @@ function RApp() {
           path="/app/user"
           element={authUser ? <User /> : <Navigate to="/auth/login" />}
         />
-        {/* <Route
-          path="/app/learning"
-          element={authUser ? <App /> : <Navigate to="/auth/login" />}
-        /> */}
-
         <Route element={<App />}>
           <Route path="/app/learning" element={<LearningSession />} />
-          {/* <Route
+          <Route path="/app/experts" element={<ExpertSection />} />
+          <Route path="/app/expert/:expertId" element={<Expert />} />
+          <Route
             path="/app/chat/:expertId/:sessionId"
             element={<ChatSession />}
-          /> */}
+          />
         </Route>
       </Routes>
       <Toaster />

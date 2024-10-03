@@ -6,13 +6,13 @@ import Literature from "../assets/experts/literature.jpg";
 import Engineering from "../assets/experts/engineering.jpg";
 import ComputerScience from "../assets/experts/computer-science.jpg";
 import History from "../assets/experts/history.jpg";
-// import Logo from "/logo.png";
+import Catalyst from "../assets/experts/catalyst.png";
 
 function expertDetail(expertId) {
   let expertIcon, expert, title, desc, cardContent;
   switch (expertId) {
     case "learning":
-      expertIcon = "";
+      expertIcon = Catalyst;
       expert = "learning";
       title = "Learning";
       desc = "Let's learn something new today!";
