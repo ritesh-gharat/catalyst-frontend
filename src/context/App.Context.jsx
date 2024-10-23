@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import firebaseDB from "../firebase/db";
+import { useAuthContext } from "./Auth.Context";
 
 export const AppContext = createContext();
 
@@ -7,6 +9,8 @@ export const useAppContext = () => {
 };
 
 export const AppContextProvider = ({ children }) => {
+  const { authUser } = useAuthContext();
+
   const [isSubNavVisible, setIsSubNavVisible] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [promptFromCard, setPromptFromCard] = useState("");
@@ -23,6 +27,20 @@ export const AppContextProvider = ({ children }) => {
   });
   const [sessionHistory, setSessionHistory] = useState(undefined);
   const [ChatSessions, setChatSessions] = useState(undefined);
+
+  useEffect(() => {
+    // Get the sessions from the database
+    if (authUser) {
+      firebaseDB.getSessions(authUser._id, (sessions) => {
+        if (sessions) {
+          setChatSessions(sessions);
+          //console.log("Fetch Data Successfullt!");
+        } else {
+          console.error("Error occurred while fetching sessions.");
+        }
+      });
+    }
+  }, []);
 
   return (
     <AppContext.Provider

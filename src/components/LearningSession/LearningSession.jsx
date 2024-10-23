@@ -7,7 +7,7 @@ import { useAuthContext } from "../../context/Auth.Context";
 function LearningSession() {
   // get the user name
   const { authUser } = useAuthContext();
-  const userName = authUser.fullName.split(" ")[0];
+  const userName = authUser.fullName.split(" ")[0]; 
   const firstLetter = userName.toLowerCase().charAt(0).toUpperCase();
   const remainingLetters = userName.toLowerCase().slice(1);
 

@@ -22,7 +22,7 @@ function UserChat({ profileImg, message, imageData }) {
           <span className="Add-Scrollbar-X">{message}</span>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 

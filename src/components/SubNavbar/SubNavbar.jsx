@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SubNavbar.css";
+import Card from "./Card/Card";
 import CloseSubNavSvg from "../../assets/navbar_close.svg?react";
 import CreateSvg from "../../assets/create.svg?react";
 import NoChatsSvg from "../../assets/no_chats.svg?react";
 
 import { useAppContext } from "../../context/App.Context";
-
 import { NavLink } from "react-router-dom";
 
 function SubNavbar() {
-  const { isSubNavVisible, setIsSubNavVisible } = useAppContext();
+  const { ChatSessions, isSubNavVisible, setIsSubNavVisible } = useAppContext();
 
   // state to manage the visibility of the sub navbar
   const closeNavbar = () => {
@@ -33,7 +33,7 @@ function SubNavbar() {
         </div>
 
         {/* Session history container */}
-        {/* <div className="w-full h-full flex flex-col items-center gap-2 pb-14 Add-Scrollbar">
+        <div className="w-full h-full flex flex-col items-center gap-2 pb-14 Add-Scrollbar">
           {ChatSessions && ChatSessions.length !== 0 ? (
             ChatSessions.map((session) => {
               return (
@@ -46,13 +46,13 @@ function SubNavbar() {
                 />
               );
             })
-          ) : ( */}
-        <div className="w-full h-full flex flex-col items-center justify-center">
-          <NoChatsSvg className="w-20 h-20 fill-PrimarySvg" />
-          No chats sessions available
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center">
+              <NoChatsSvg className="w-20 h-20 fill-PrimarySvg" />
+              No chats sessions available
+            </div>
+          )}
         </div>
-        {/* )}
-        </div> */}
       </div>
 
       <div className="bg-slate-700 Sub-Navbar-Bg" onClick={closeNavbar}></div>
