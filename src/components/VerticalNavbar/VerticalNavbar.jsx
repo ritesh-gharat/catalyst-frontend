@@ -5,7 +5,7 @@ import LearningSVG from "../../assets/learning.svg?react";
 import TuitionSVG from "../../assets/tution.svg?react";
 import UserSVG from "../../assets/user.svg?react";
 import LogoutSVG from "../../assets/logout.svg?react";
-import LogoSvg from "../../assets/logo.svg?react";
+import LogoSvg from "../../assets/logo.svg";
 
 import { useAuthContext } from "../../context/Auth.Context";
 import auth from "../../hooks/auth";
