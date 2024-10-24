@@ -5,7 +5,7 @@ import LearningSVG from "../../assets/learning.svg?react";
 import TuitionSVG from "../../assets/tution.svg?react";
 import UserSVG from "../../assets/user.svg?react";
 import LogoutSVG from "../../assets/logout.svg?react";
-import LogoSvg from "../../assets/logo.svg";
+// import LogoSvg from "../../assets/logo.svg?react";
 
 import { useAuthContext } from "../../context/Auth.Context";
 import auth from "../../hooks/auth";
@@ -40,10 +40,10 @@ function VerticalNavbar() {
     <div className="w-full h-14 p-2 md:p-0 md:w-14 md:h-full flex flex-row md:flex-col items-center justify-evenly bg-Tertiary">
       {/* Logo container */}
       <NavLink to="/">
-        <LogoSvg
+        {/* <LogoSvg
           className="h-9 w-9 p-1 bg-Primary rounded-[10px] cursor-pointer hidden md:block md:absolute md:top-2 left-2"
           alt="logo"
-        />
+        /> */}
       </NavLink>
 
       {/* Navigation links container */}
